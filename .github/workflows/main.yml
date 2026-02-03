@@ -16,5 +16,5 @@ jobs:
       - name: Install dependencies
         run: pip install -r exp 2/requirement.txt
  
-      - name: Run training script
+      - name: run training script
         run: python exp 2/train.py
