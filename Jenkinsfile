@@ -13,7 +13,9 @@ pipeline {
             steps {
                 dir('exp 2') {
                     bat 'python --version'
-                    bat 'pip install -r requirements.txt'
+                    bat 'python -m ensurepip --default-pip'
+                    bat 'python -m pip install --upgrade pip'
+                    bat 'python -m pip install -r requirements.txt'
                 }
             }
         }
@@ -22,9 +24,18 @@ pipeline {
             steps {
                 dir('exp 2') {
                     echo 'Starting Model Training...'
-                    bat 'train.py'
+                    bat 'python train.py'
                 }
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline executed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
         }
     }
 }
