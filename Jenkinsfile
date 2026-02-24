@@ -12,8 +12,8 @@ pipeline {
         stage('Environment Setup') {
             steps {
                 dir('exp 2') {
-                    sh 'python3 --version'
-                    sh 'pip3 install -r requirements.txt'
+                    bat 'python --version'
+                    bat 'pip install -r requirements.txt'
                 }
             }
         }
@@ -22,7 +22,7 @@ pipeline {
             steps {
                 dir('exp 2') {
                     echo 'Starting Model Training...'
-                    sh 'python3 train.py'
+                    bat 'train.py'
                 }
             }
         }
