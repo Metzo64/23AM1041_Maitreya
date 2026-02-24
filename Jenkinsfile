@@ -15,7 +15,7 @@ pipeline {
                     bat 'python --version'
                     bat 'python -m ensurepip --default-pip'
                     bat 'python -m pip install --upgrade pip'
-                    bat 'python -m pip install -r requirements.txt'
+                    bat 'python -m pip install -r requirement.txt'
                 }
             }
         }
